@@ -1,0 +1,46 @@
+
+    #window {
+        background-color: rgba(0, 0, 0, 0.666);
+        border: 2px solid rgba(0, 255, 238, 0.999);
+        margin-right: 200px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+    }
+
+    /*
+    #outer-box {
+        background-color: rgba(20, 20,20, 0.7);
+        border: 1px solid rgba(255, 0, 0, 0.5);
+    }*/
+
+    #input {
+    	location: bottom;
+        border: 2px solid rgba(100, 100, 100, 0.666);
+        border-radius: 10px;
+		box-shadow: none;
+        margin-left: 33px;
+        margin-right: 33px;
+        margin-top: 10px;
+        margin-bottom: 10px;flex-direction: column-reverse;
+        background-color: rgba(0, 0, 0, 0.01);
+    }
+
+    #input:focus {
+        color: #999999;
+        border: 2px solid rgba(0, 255, 238, 1);
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.01);
+    }
+
+    #entry {
+        border-radius: 10px;
+        margin: 5px;
+        margin-right: 33px;
+        margin-left: 33px;
+        padding-left: 10px;
+    }
+
+    #entry:focus {
+        background: rgba(0, 255, 238, 0.666);
+        border: 1px solid rgba(0, 255, 238, 0.666));
+    }
