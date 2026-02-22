@@ -10,14 +10,17 @@
       "custom/texttwo",
       "custom/textthree",
       "custom/textfour",
-      "custom/textfive"
+      "custom/textfive",
     ],
     "modules-center": [
-      "sway/window"
+      "sway/window",
+      "custom/cava"
     ],
     "modules-right": [
       "hyprland/language",
-      "idle_inhibitor",
+      "custom/wifi",
+      "custom/ping",
+      "custom/bluetooth",
       "cpu",
       "memory",
       "pulseaudio",
@@ -36,7 +39,7 @@
       }
     },
     "custom/launcher": {
-      "format": "ꙮ ",
+      "format": "\udb82\udcc7 ",
       "on-click": "wofi --show drun --width 33% --height 50% --location 1",
       "tooltip": false
     },
@@ -105,10 +108,10 @@
     	"format":"{:%d.%m.%Y  %H:%M }",
     },
     "cpu": {
-      "format": "  {usage}%"
+      "format": "  {usage}% "
     },
     "memory": {
-      "format": " {}%"
+      "format": " {}% "
     },
     "backlight": {
       "format": "{icon} {percent}%",
@@ -154,17 +157,23 @@
     },
     "pulseaudio": {
       "scroll-step": 5,
-      "format": "{icon}  {volume}% {format_source}",
+      "format": "{icon}  {volume}% {format_source} ",
       "format-bluetooth": " {icon} {volume}% {format_source}",
       "format-bluetooth-muted": "  {icon} {format_source}",
       "format-muted": "  {format_source}",
-      "format-source": " {volume}%",
-      "format-source-muted": "",
+      "format-source": " {volume}% ",
+      "format-source-muted": "  ",
       "format-icons": {
         "default": [
-          "",
-          "",
-          ""
+          "✕",
+          "▁",
+          "▂",
+          "▃",
+          "▄",
+          "▅",
+          "▆",
+          "▇",
+          "█"
         ]
       },
       "on-click": "pavucontrol",
@@ -172,11 +181,35 @@
     },
     "hyprland/language": {
         "format": "{}",
-    	"format-en": "EN",
-    	"format-ru": "РУС",
-    	"on-click": "hyprctl dispatch input:kb_layout ru,us"
+    	"format-en": "EN ",
+    	"format-ru": "РУС ",
+    	"on-click": "hyprctl switchxkblayout all next"
 	},
-  },
+    "custom/wifi": {
+      "format": "{}",
+      "interval": 30,
+      "exec": "status=$(nmcli radio wifi); connectivity=$(nmcli -t -f CONNECTIVITY g); if [ \"$status\" = \"disabled\" ]; then echo '<span color=\"#ff0000\">✕ </span>'; elif [ \"$connectivity\" != \"full\" ]; then echo '<span color=\"#ff6000\">   ! </span>'; else echo '<span color=\"#ffffff\"> </span>'; fi",
+      "on-click": "kitty --class nmtui nmtui",
+      "tooltip": false
+    },
+    "custom/ping": {
+      "interval": 5,
+      "exec": "ping -c 1 -W 2 8.8.8.8 | awk -F'[=/]' 'END{ if (NR==0 || $5 > 1000) print \"<span color=\\\"#ff0000\\\">󰖟✕</span>\"; else print \"<span color=\\\"#ffffff\\\">󰖟 </span>\" }'",
+      "format": "{}",
+      "tooltip-format": "Проверка связи",
+      "on-click": "kitty gping google.com" // Если установлен gping — будет красивый график при клике
+    },
+    "custom/bluetooth": {
+      "interval": 2,
+      "exec": "cat /sys/class/rfkill/rfkill*/state | sed -n '2p' | grep -q '1' && echo '<span color=\"#bababa\">󰂯</span>' || echo '<span color=\"#bababa\">󰂲</span>'",
+      "on-click": "blueman-manager",
+      "tooltip-format": "Управление Bluetooth"
+    },
+    "custom/cava": {
+      "exec": "cava -p ~/.config/cava/config_waybar | sed -u 's/0/  /g; s/1/▂▂/g; s/2/▃▃/g; s/3/▄▄/g; s/4/▅▅/g; s/5/▆▆/g; s/6/▇▇/g; s/7/██/g'",
+      "format": "{}"
+    }
+},
   {
     "layer": "top",
     "position": "bottom",
@@ -194,7 +227,7 @@
       "max-length": 50
     },
     "custom/os_button": {
-      "format": " ꙮ ",
+      "format": "\udb82\udcc7",
       "on-click": "wofi --show drun --width 33% --height 50% --location bottom",
       "tooltip": false
     },
