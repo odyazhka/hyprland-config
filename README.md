@@ -4,16 +4,21 @@
 ## Скриншоты
 
 ### Дизайн панелей
-<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/1f8a8b7a-2098-4040-96be-e0049743486f" />
+<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/acc5b5bc-40c3-49ad-9449-f86759e9f698" />
+
 
 ### Меню пуск
-<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/477d19b2-abd0-4a7b-a125-635f9dbe6029" />
+<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/2bf2b70f-b458-4c8d-96a7-b51887e40c34" />
 
-### Прозрачный терминал kitty
-<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/64cc1c3c-0469-4213-bfdf-7c8078a3abf5" />
+
 
 ### Панель выключения
 <img width="1280" height="960" alt="изображение" src="https://github.com/user-attachments/assets/b161cfe7-67f3-4c20-b857-6498da9981d8" />
+
+
+###Значки верхней панели: Wifi, интернет и Bluetooth
+<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/5d8218dc-6756-4f97-9627-d3afc702e860" />
+
 
 ## Конфиги hyperland
 Файл hyperland.conf переместить в ~/.config/hyprland
