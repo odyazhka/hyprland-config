@@ -48,7 +48,9 @@ tooltip label {
 #temperature,
 #backlight,
 #network,
-#pulseaudio,
+#pulseaudio {
+  color: white;
+}
 #wireplumber,
 #custom-media,
 #tray,
@@ -71,7 +73,7 @@ tooltip label {
 }
 
 #clock {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 #battery icon {
@@ -138,10 +140,28 @@ label:focus {
 }
 
 #custom-os_button {
-  font-size: 32px;
+  font-size: 36px;
+  color: #03a9fc;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #custom-os_button:hover {
+  background: black;
+  color: white;
+}
+#custom-cava {
+  font-family:"Symbols Nerd Font Mono", monospace;
+  font-size: 20px;
+    /* Если хочешь, чтобы место под полоски всегда было зарезервировано: */
+  min-width: 80px;
+    /* Если хочешь, чтобы они плавно появлялись: */
+  transition: all 0.3s ease;
+  color: #c203fc;
+}
+#custom-launcher {
+  font-size: 22px;
+  color: #03a9fc;
+}
+#custom-launcher:hover {
   background: black;
   color: white;
 }
