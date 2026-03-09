@@ -16,7 +16,7 @@
 <img width="1280" height="960" alt="изображение" src="https://github.com/user-attachments/assets/b161cfe7-67f3-4c20-b857-6498da9981d8" />
 
 
-###Значки верхней панели: Wifi, интернет и Bluetooth
+### Значки верхней панели: Wifi, интернет и Bluetooth
 <img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/5d8218dc-6756-4f97-9627-d3afc702e860" />
 
 
