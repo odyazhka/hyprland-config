@@ -3,12 +3,15 @@
 
 ## Скриншоты
 
-### Дизайн панелей
-<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/acc5b5bc-40c3-49ad-9449-f86759e9f698" />
+### Терминал
+<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/c08a00a3-a51c-4937-808f-17f113a10acf" />
+
 
 
 ### Меню пуск
-<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/2bf2b70f-b458-4c8d-96a7-b51887e40c34" />
+<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/2c065df8-e56f-4056-b793-323812a1f251" />
+
+
 
 
 
@@ -17,7 +20,8 @@
 
 
 ### Значки верхней панели: Wifi, интернет и Bluetooth
-<img width="1920" height="1080" alt="изображение" src="https://github.com/user-attachments/assets/5d8218dc-6756-4f97-9627-d3afc702e860" />
+<img width="1918" height="1078" alt="изображение" src="https://github.com/user-attachments/assets/e26b121a-2d77-405f-9dc7-6cc81d138791" />
+
 
 
 ## Конфиги hyperland
