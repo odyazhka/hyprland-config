@@ -1,0 +1,249 @@
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/window",
+      "custom/texttwo",
+      "custom/textthree",
+      "custom/textfour",
+      "custom/textfive",
+
+    ],
+    "modules-center": [
+      "sway/window",
+      "custom/cava"
+    ],
+    "modules-right": [
+      "hyprland/language",
+      "custom/wifi",
+      "custom/ping",
+      "custom/bluetooth",
+      "pulseaudio",
+      "backlight",
+      "keyboard-state",
+      "battery",
+      "battery#bat2",
+      "tray",
+      "custom/clock",
+      "custom/power"
+    ],
+
+    "custom/power": {
+      "format": "󰤆 ",
+      "on-click": "wlogout",
+      "tooltip": false
+    },
+
+
+    "hyprland/window": {
+      "format": "{class}",
+      "max-length": 20,
+      "rewrite": {
+        "^(?!.*\\S).*": " "
+      }
+    },
+    "custom/launcher": {
+      "format": "\udb82\udcc7 ",
+      "on-click": "wofi --show drun --width 33% --height 50% --location 1",
+      "tooltip": false
+    },
+    "keyboard-state": {
+      "numlock": true,
+      "capslock": true,
+      "format": "{name} {icon}",
+      "format-icons": {
+        "locked": "",
+        "unlocked": ""
+      }
+    },
+    "sway/mode": {
+      "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+      "format": "{icon} {count}",
+      "show-empty": false,
+      "format-icons": [
+        "",
+        ""
+      ],
+      "tooltip": true,
+      "tooltip-format": "{app}: {title}"
+    },
+    "mpd": {
+      "format": "  {title} ⏻- {artist} {stateIcon} [{elapsedTime:%M:%S}/{totalTime:%M:%S}] {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}[{songPosition}/{queueLength}] [{volume}%]",
+      "format-disconnected": " Disconnected",
+      "format-stopped": " {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped",
+      "unknown-tag": "N/A",
+      "interval": 2,
+      "consume-icons": {
+        "on": " "
+      },
+      "random-icons": {
+        "on": " "
+      },
+      "repeat-icons": {
+        "on": " "
+      },
+      "single-icons": {
+        "on": "1 "
+      },
+      "state-icons": {
+        "paused": "",
+        "playing": ""
+      },
+      "tooltip-format": "MPD (connected)",
+      "tooltip-format-disconnected": "MPD (disconnected)",
+      "on-click": "mpc toggle",
+      "on-click-right": "foot -a ncmpcpp ncmpcpp",
+      "on-scroll-up": "mpc volume +2",
+      "on-scroll-down": "mpc volume -2"
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": " ",
+        "deactivated": " "
+      }
+    },
+    "tray": {
+    },
+    "custom/clock": {
+      "interval": 60,
+      "exec": "LC_TIME=ru_RU.UTF-8 date '+%a, %d %b %H:%M'",
+    },
+    "backlight": {
+      "format": "{icon} {percent}%",
+      "format-icons": [
+        "󰄰",
+        "󰪞",
+        "󰪟",
+        "󰪠",
+        "󰪡",
+        "󰪢",
+        "󰪣",
+        "󰪤",
+        "󰪥"
+      ]
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-alt": "{icon} {time}",
+      "format-icons": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂂",
+        "󰁹",
+      ]
+    },
+    "battery#bat2": {
+      "bat": "BAT2"
+    },
+    "network": {
+      "format-wifi": "{essid} ({signalStrength}%) ",
+      "format-ethernet": " {ifname}",
+      "tooltip-format": " {ifname} via {gwaddr}",
+      "format-linked": " {ifname} (No IP)",
+      "format-disconnected": "Disconnected ⚠ {ifname}",
+      "format-alt": " {ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+      "scroll-step": 5,
+      "format": "{icon}  {volume}%",
+      "format-bluetooth": " {icon} {volume}% {format_source}",
+      "format-bluetooth-muted": "  {icon} {format_source}",
+      "format-icons": {
+        "default": [
+          "✕",
+          "▁",
+          "▂",
+          "▃",
+          "▄",
+          "▅",
+          "▆",
+          "▇",
+          "█"
+        ]
+      },
+      "on-click": "pavucontrol",
+      "on-click-right": "foot -a pw-top pw-top"
+    },
+    "hyprland/language": {
+        "format": "{}",
+    	"format-en": "EN ",
+    	"format-ru": "РУС ",
+    	"on-click": ""
+	},
+    "custom/wifi": {
+      "format": "{}",
+      "interval": 30,
+      "exec": "status=$(nmcli radio wifi); connectivity=$(nmcli -t -f CONNECTIVITY g); if [ \"$status\" = \"disabled\" ]; then echo '<span color=\"#ff0000\">✕ </span>'; elif [ \"$connectivity\" != \"full\" ]; then echo '<span color=\"#ff6000\">   ! </span>'; else echo '<span color=\"#ffffff\"> </span>'; fi",
+      "on-click": "kitty --class nmtui nmtui",
+      "tooltip": false
+    },
+    "custom/ping": {
+      "interval": 5,
+      "exec": "ping -c 1 -W 2 8.8.8.8 | awk -F'[=/]' 'END{ if (NR==0 || $5 > 1000) print \"<span color=\\\"#ff0000\\\">󰖟✕</span>\"; else print \"<span color=\\\"#ffffff\\\">󰖟</span>\" }'",
+      "format": "{}",
+      "tooltip-format": "Проверка связи",
+      "on-click": "kitty gping google.com" // Если установлен gping — будет красивый график при клике
+    },
+    "custom/bluetooth": {
+      "interval": 2,
+      "exec": "cat /sys/class/rfkill/rfkill*/state | sed -n '2p' | grep -q '1' && echo '<span color=\"#ffffff\">󰂯</span>' || echo '<span color=\"#ffffff\">󰂲</span>'",
+      "on-click": "blueman-manager",
+      "tooltip-format": "Управление Bluetooth"
+    },
+    "custom/cava": {
+      "exec": "cava -p ~/.config/cava/config_waybar | sed -u 's/0/  /g; s/1/▂▂/g; s/2/▃▃/g; s/3/▄▄/g; s/4/▅▅/g; s/5/▆▆/g; s/6/▇▇/g; s/7/██/g'",
+      "format": "{}"
+    }
+},
+  {
+    "layer": "top",
+    "position": "bottom",
+    "height": 0,
+    "width": 2,
+    "modules-left": [
+      "custom/os_button"
+    ],
+    "modules-center": [
+      "sway/mode",
+      "wlr/taskbar",
+      "custom/niflveil",
+    ],
+
+    "margin": "0",
+    "sway/window": {
+      "max-length": 50
+    },
+    "custom/os_button": {
+      "format": "\udb82\udcc7.",
+      "on-click": "wofi --show drun --width 33% --height 50% --location bottom",
+      "tooltip": false
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "exec": "niflveil show",
+      "icon-size": 36,
+      "on-click-middle": "close",
+      "tooltip-format": "{title}",
+      "ignore-list": [],
+      "on-click": "activate && niflveil restore"
+    },
+  }
+]
