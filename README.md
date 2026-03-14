@@ -57,6 +57,6 @@ Wofi: простое меню пуск, где можно искать и отк
 
    ```sudo pacman -S wlogout```
 
-Для локализации заменить файл layont в /etc/wlogout с помощью командой
+Для локализации заменить файл layout в /etc/wlogout с помощью командой
 
-   ```sudo mv ~/layont /etc/layont```
+   ```sudo mv ~/layont /etc/wlogout/layout```
